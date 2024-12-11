@@ -1,3 +1,87 @@
+## Release 3.1.0-SNAPSHOT
+
+### API Changes
+
+1. Kernel: Refactor of the way Lambda job classes are identified - [#2370](https://github.com/apache/shardingsphere-elasticjob/issues/2370)
+
+### New Features
+
+1. Bootstrap: Provides built-in GraalVM Reachability Metadata and nativeTest on Elasticjob Bootstrap - [#2268](https://github.com/apache/shardingsphere-elasticjob/pull/2268)
+1. Lifecycle: Support dynamic configuration of jobs through the Operation API in GraalVM Native Image - [#2426](https://github.com/apache/shardingsphere-elasticjob/pull/2426)
+1. Registry Center: Allows to skip Ensemble Tracker for ZookeeperConfiguration to allow connecting to HA enabled Zookeeper clusters in Kubernetes - [#2072](https://github.com/apache/shardingsphere-elasticjob/issues/2072)
+
+### Enhancements
+
+1. Build: Support for building with OpenJDK 22 - [#2407](https://github.com/apache/shardingsphere-elasticjob/issues/2407)
+1. Spring Boot Starter: Block `elasticjob-spring-boot-starter` from passing `spring-boot-starter` test scope dependencies - [#2418](https://github.com/apache/shardingsphere-elasticjob/issues/2418)
+1. Doc: Adds documentation for connecting to Zookeeper Server with SASL enabled - [#2442](https://github.com/apache/shardingsphere-elasticjob/pull/2442)
+1. Dependencies: Bump Quartz to 2.4.0 - [#2439](https://github.com/apache/shardingsphere-elasticjob/issues/2439)
+1. Build: Support building and using ElasticJob with JDK23 - [#2453](https://github.com/apache/shardingsphere-elasticjob/issues/2453)
+
+### Bug Fixes
+
+1. Build: Removes non-existent `elasticjob-tracing-api` and `elasticjob-error-handler-spi` module - [#2412](https://github.com/apache/shardingsphere-elasticjob/pull/2412)
+1. Spring Boot Starter: Fixes the issue that OneOffJobBootstrap cannot be used under ElasticJob Spring Boot Starter - [#2014](https://github.com/apache/shardingsphere-elasticjob/issues/2014)
+1. Spring: Fixes potential conflict in AOP proxy job class identification in Spring Framework - [#2012](https://github.com/apache/shardingsphere-elasticjob/issues/2012)
+
+### Change Logs
+
+1. [MILESTONE](https://github.com/apache/shardingsphere-elasticjob/milestone/7)
+
+## 3.0.4
+
+### Dependencies Upgrade
+1. Update dependencies to fix CVE
+
+### Enhancements
+1. Support for building with OpenJDK 21
+2. Accelerate the startup speed of ElasticJob
+3. Migrate from Junit Vintage to Junit Jupiter
+
+### Change Logs
+
+1. [MILESTONE 3.0.4](https://github.com/apache/shardingsphere-elasticjob/milestone/9)
+
+
+## 3.0.3
+
+### Bug Fixes
+
+1. Job class conflict error caused by empty String
+1. Possible NPE in LegacyCrashedRunningItemListener
+1. Possible NPE in InstanceService.getAvailableJobInstances
+1. Job listeners configured in local configuration were used even if overwrite=false
+
+### Enhancements
+
+1. Add new job dump method in JobOperateAPI
+1. Avoid once listener invoke multi times
+
+### Change Logs
+
+1. [MILESTONE 3.0.3](https://github.com/apache/shardingsphere-elasticjob/milestone/8)
+
+
+## 3.0.2
+
+### Bug Fixes
+
+1. Fix itemErrorMessages not cleared after job finished.
+1. Fix Curator notify thread may be blocked and avoid probably endless loop in ServerService.
+1. NPE occur when job instance could not be unmarshalled.
+1. Fix failover too sensitive.
+
+### Enhancements
+
+1. Script Job exception's stack was ignored.
+1. Support using different event trace data source when using Spring Boot.
+1. Supports building project by Java 19.
+
+### Change Logs
+
+1. [MILESTONE 3.0.2](https://github.com/apache/shardingsphere-elasticjob/milestone/5)
+
+
 ## 3.0.1
 
 ### Enhancements
